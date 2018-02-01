@@ -1,0 +1,25 @@
+{
+  "name": "ZeebeeIR",
+  "version": "1.0.0",
+  "description": "Tool to find similiarity between any two images",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/privateOmega/ZeebeeIR",
+  "author": "privateomega <privateomega@protonmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "multer": "^1.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js"
+  }
+}

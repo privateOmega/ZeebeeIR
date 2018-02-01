@@ -1,0 +1,13 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "8"
+python:
+  - "2.7"
+before_install:
+  - curl -s "https://raw.githubusercontent.com/arthurbeggs/scripts/master/install_apps/install_opencv2.sh" | bash
+install:
+  - npm install
+script:
+  - npm run lint
