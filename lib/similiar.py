@@ -1,4 +1,5 @@
 from colordescriptor import ColorDescriptor
+from siftdescriptor import SiftDescriptor
 import cv2
 import numpy as np
 import sys
@@ -16,5 +17,12 @@ featuresOne = cd.describe(imageOne)
 imageTwo = cv2.imread(sys.argv[2])
 featuresTwo = cd.describe(imageTwo)
 d = chi2_distance(featuresOne, featuresTwo)
-print('similiarity', d)
+print('similiarity in cd', d)
+
+sd = SiftDescriptor()
+desOne = sd.describe(imageOne)
+desTwo = sd.describe(imageTwo)
+bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+matches = bf.match(desOne, desTwo)
+print('similiarity in sd', matches.distance)
 
